@@ -35,14 +35,20 @@
             zoomOffset: -1
         }).addTo(mymap)
 
-        for (var lskey of ['marker_lurah_1', 'marker_lurah_2']) {
-            try {
-                let slatlng = localStorage.getItem(lskey)
-                let olatlng = JSON.parse(slatlng)
-                let marker = L.marker([olatlng.lat, olatlng.lng]).addTo(mymap)
-            } catch (e) {
+        try {
+            let slatlng = localStorage.getItem('marker_lurah_1')
+            let olatlng = JSON.parse(slatlng)
+            let marker = L.marker([olatlng.lat, olatlng.lng]).addTo(mymap)
+        } catch (e) {
 
-            }
+        }
+
+        try {
+            let slatlng = localStorage.getItem('marker_lurah_2')
+            let olatlng = JSON.parse(slatlng)
+            let marker = L.marker([olatlng.lat, olatlng.lng]).addTo(mymap)
+        } catch (e) {
+
         }
     </script>
 
